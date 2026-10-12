@@ -21,6 +21,10 @@
   <meta name="twitter:description" content="Твой персональный 3D подарок, поздравления персонажей и праздничное шоу! Нажми, чтобы открыть ✨">
   <meta name="twitter:image" content="https://motaro900-cmyk.github.io/katya-vip-2026/assets/vk_preview_banner.jpg?v=2">
   <meta name="theme-color" content="#040407">
+  <!-- Preload Critical Above-the-fold Assets -->
+  <link rel="preload" as="image" href="./assets/luxury_vip_bg.webp" type="image/webp">
+  <link rel="preload" as="image" href="./assets/luxury_gift_case.webp" type="image/webp">
+
   
   <!-- Premium Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -88,7 +92,7 @@
       background-color: #040407 !important;
       background-image: 
         radial-gradient(circle at 50% 10%, rgba(4, 4, 7, 0.45) 0%, rgba(4, 4, 7, 0.88) 100%),
-        url('./assets/luxury_vip_bg.jpg') !important;
+        url('./assets/luxury_vip_bg.webp') !important;
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
@@ -209,11 +213,11 @@
   <canvas id="fxCanvas"></canvas>
 
   <!-- Audio Engine Elements (Real Studio MP3 / WAV Assets) -->
-  <audio id="bgmAudio" src="./assets/bgm.mp3" loop preload="auto"></audio>
-  <audio id="sfxCork" src="./assets/sfx/bottle_cork_sound_effects(MP3_160K).mp3" preload="auto"></audio>
-  <audio id="sfxFanfare" src="./assets/sfx/Congratulations_sound_effect.mp3" preload="auto"></audio>
-  <audio id="sfxClick" src="./assets/sfx/Click_Sound_Effect(256k).mp3" preload="auto"></audio>
-  <audio id="sfxWhoosh" src="./assets/sfx/17_Simple_Whoosh.wav" preload="auto"></audio>
+  <audio id="bgmAudio" src="./assets/bgm.mp3" loop preload="none"></audio>
+  <audio id="sfxCork" src="./assets/sfx/bottle_cork_sound_effects(MP3_160K).mp3" preload="none"></audio>
+  <audio id="sfxFanfare" src="./assets/sfx/Congratulations_sound_effect.mp3" preload="none"></audio>
+  <audio id="sfxClick" src="./assets/sfx/Click_Sound_Effect(256k).mp3" preload="none"></audio>
+  <audio id="sfxWhoosh" src="./assets/sfx/whoosh.mp3" preload="none"></audio>
 
   <!-- Sound & Music Floating VIP Dock -->
   <header class="fixed top-3 right-3 sm:top-5 sm:right-6 z-50 flex items-center gap-2">
@@ -247,7 +251,7 @@
       <div onclick="openGift(event)" class="relative cursor-pointer group mb-7">
         <div class="w-64 h-64 sm:w-76 sm:h-76 rounded-3xl glass-luxury p-3 relative flex items-center justify-center border-2 border-gold-500/60 shadow-[0_0_60px_rgba(223,177,91,0.35)] group-hover:shadow-[0_0_90px_rgba(223,177,91,0.6)] group-hover:scale-105 active:scale-95 transition-all duration-500 overflow-hidden">
           
-          <img src="./assets/luxury_gift_case.jpg" alt="Ювелирный футляр с монограммой Е" class="w-full h-full object-cover rounded-2xl shadow-2xl group-hover:brightness-110 transition-all duration-500">
+          <img src="./assets/luxury_gift_case.webp" fetchpriority="high" decoding="sync" alt="Ювелирный футляр с монограммой Е" class="w-full h-full object-cover rounded-2xl shadow-2xl group-hover:brightness-110 transition-all duration-500">
           
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-white/10 rounded-2xl pointer-events-none"></div>
 
@@ -380,7 +384,7 @@
         </div>
 
         <div class="relative rounded-2xl overflow-hidden bg-black/95 aspect-[9/16] sm:aspect-[9/14] max-h-[720px] mx-auto flex items-center justify-center group border border-white/10 shadow-inner">
-          <img id="mainFigureImg" src="./assets/katya_figurine_red_v2.jpg" alt="Коллекционная 3D фигурка Екатерины" class="w-full h-full object-contain cursor-zoom-in group-hover:scale-[1.02] transition-transform duration-500" onclick="openZoomModal()">
+          <img id="mainFigureImg" src="./assets/katya_figurine_red_v2.webp" loading="lazy" decoding="async" alt="Коллекционная 3D фигурка Екатерины" class="w-full h-full object-contain cursor-zoom-in group-hover:scale-[1.02] transition-transform duration-500" onclick="openZoomModal()">
           
           <button onclick="openZoomModal()" class="absolute bottom-4 right-4 px-4 py-2.5 rounded-xl glass-luxury text-xs font-bold text-white flex items-center gap-2 opacity-90 hover:opacity-100 hover:scale-105 transition-all shadow-2xl border border-gold-500/40">
             <i data-lucide="maximize-2" class="w-4 h-4 text-gold-400"></i>
@@ -451,7 +455,7 @@
           <!-- Фигурка Спанч Боба -->
           <div class="relative w-36 h-44 sm:w-44 sm:h-52 flex items-center justify-center mb-2">
             <div class="absolute inset-x-4 bottom-2 h-10 bg-amber-400/30 blur-xl rounded-full"></div>
-            <img src="./assets/chars/spongebob.png" alt="Спанч Боб Квадратные Штаны" class="w-full h-full object-contain filter drop-shadow-[0_12px_24px_rgba(251,191,36,0.45)] char-dance-1 group-hover:scale-110 transition-transform duration-300">
+            <img src="./assets/chars/spongebob.webp" loading="lazy" decoding="async" alt="Спанч Боб Квадратные Штаны" class="w-full h-full object-contain filter drop-shadow-[0_12px_24px_rgba(251,191,36,0.45)] char-dance-1 group-hover:scale-110 transition-transform duration-300">
           </div>
 
           <div class="font-extrabold text-base text-yellow-300 mb-2 tracking-wide">Спанч Боб Квадратные Штаны</div>
@@ -481,7 +485,7 @@
           <!-- Фигурка Патрика -->
           <div class="relative w-36 h-44 sm:w-44 sm:h-52 flex items-center justify-center mb-2">
             <div class="absolute inset-x-4 bottom-2 h-10 bg-pink-500/30 blur-xl rounded-full"></div>
-            <img src="./assets/chars/patrick.png" alt="Патрик Стар" class="w-full h-full object-contain filter drop-shadow-[0_12px_24px_rgba(244,114,182,0.45)] char-dance-2 group-hover:scale-110 transition-transform duration-300">
+            <img src="./assets/chars/patrick.webp" loading="lazy" decoding="async" alt="Патрик Стар" class="w-full h-full object-contain filter drop-shadow-[0_12px_24px_rgba(244,114,182,0.45)] char-dance-2 group-hover:scale-110 transition-transform duration-300">
           </div>
 
           <div class="font-extrabold text-base text-pink-300 mb-2 tracking-wide">Патрик Стар</div>
@@ -511,7 +515,7 @@
           <!-- Фигурка Тома и Джерри -->
           <div class="relative w-36 h-44 sm:w-44 sm:h-52 flex items-center justify-center mb-2">
             <div class="absolute inset-x-4 bottom-2 h-10 bg-cyan-400/30 blur-xl rounded-full"></div>
-            <img src="./assets/chars/tom_and_jerry.png" alt="Том и Джерри" class="w-full h-full object-contain filter drop-shadow-[0_12px_24px_rgba(34,211,238,0.45)] char-dance-3 group-hover:scale-110 transition-transform duration-300">
+            <img src="./assets/chars/tom_and_jerry.webp" loading="lazy" decoding="async" alt="Том и Джерри" class="w-full h-full object-contain filter drop-shadow-[0_12px_24px_rgba(34,211,238,0.45)] char-dance-3 group-hover:scale-110 transition-transform duration-300">
           </div>
 
           <div class="font-extrabold text-base text-cyan-300 mb-2 tracking-wide">Том & Джерри</div>
@@ -553,7 +557,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div class="rounded-2xl overflow-hidden glass-card-subtle p-3.5 flex flex-col items-center">
           <div class="w-full aspect-[4/5] rounded-xl overflow-hidden bg-black/60 mb-3 relative flex items-center justify-center border border-white/5">
-            <img id="origPhotoImg" src="./assets/katya_orig_red_hd.jpg" alt="Оригинальное фото Екатерины" class="w-full h-full object-cover">
+            <img id="origPhotoImg" src="./assets/katya_orig_red_hd.webp" loading="lazy" decoding="async" alt="Оригинальное фото Екатерины" class="w-full h-full object-cover">
             <span class="absolute bottom-2.5 left-2.5 px-3 py-1 rounded-md bg-black/85 text-[10px] font-mono text-gray-200 border border-white/10">
               РЕАЛЬНЫЙ ИСХОДНИК
             </span>
@@ -565,7 +569,7 @@
 
         <div class="rounded-2xl overflow-hidden glass-card-subtle p-3.5 flex flex-col items-center">
           <div class="w-full aspect-[4/5] rounded-xl overflow-hidden bg-black/60 mb-3 relative flex items-center justify-center border border-white/5">
-            <img id="renderThumbImg" src="./assets/katya_figurine_red_v2.jpg" alt="3D Фигурка Екатерины" class="w-full h-full object-contain bg-neutral-950">
+            <img id="renderThumbImg" src="./assets/katya_figurine_red_v2.webp" loading="lazy" decoding="async" alt="3D Фигурка Екатерины" class="w-full h-full object-contain bg-neutral-950">
             <span class="absolute bottom-2.5 left-2.5 px-3 py-1 rounded-md bg-gold-500 text-[10px] font-mono text-gray-950 font-bold shadow-md">
               3D СТАТУЭТКА С КОРОБКОЙ
             </span>
@@ -636,7 +640,7 @@
     </button>
     
     <div class="max-w-3xl w-full h-[88vh] flex flex-col items-center justify-center relative">
-      <img id="zoomModalImg" src="./assets/katya_figurine_red_v2.jpg" alt="4K Детальный просмотр фигурки" class="max-h-full max-w-full object-contain rounded-2xl shadow-2xl">
+      <img id="zoomModalImg" src="./assets/katya_figurine_red_v2.webp" alt="4K Детальный просмотр фигурки" class="max-h-full max-w-full object-contain rounded-2xl shadow-2xl">
       <div class="absolute bottom-3 px-4 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-gold-500/30 text-[11px] text-gold-300 font-mono tracking-wider">
         УЛЬТРА ДЕТАЛИЗАЦИЯ 4K • РУЧНАЯ РАБОТА И 3D СКАН
       </div>
@@ -716,15 +720,15 @@
     const editions = {
       1: {
         title: "Вариант I: «Алый Вечер» (Red Carpet Queen)",
-        figureImg: "./assets/katya_figurine_red_v2.jpg",
-        origImg: "./assets/katya_orig_red_hd.jpg",
+        figureImg: "./assets/katya_figurine_red_v2.webp",
+        origImg: "./assets/katya_orig_red_hd.webp",
         origDesc: "Оригинальный вечерний портрет: открытые плечи, алая помада и золотой кулон-ключик",
         renderDesc: "Точное повторение позы, лица, платья, коробка с гравировкой «ЕКАТЕРИНА» и ZBrush",
       },
       2: {
         title: "Вариант II: «Городской Шик» (Urban Chic Edition)",
-        figureImg: "./assets/katya_figurine_chic_v2.jpg",
-        origImg: "./assets/katya_orig_chic_hd.jpg",
+        figureImg: "./assets/katya_figurine_chic_v2.webp",
+        origImg: "./assets/katya_orig_chic_hd.webp",
         origDesc: "Стильный летний образ в парке: черный топ-халтер, белая мини-юбка и сумочка",
         renderDesc: "100% перенос фигуры и наряда, коробка «ЕКАТЕРИНА • ГОРОДСКОЙ ШИК» и ZBrush-модель",
       }
